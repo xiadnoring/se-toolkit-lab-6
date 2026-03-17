@@ -12,6 +12,10 @@ with open(".env.agent.secret", "r") as f:
 program_params = " ".join(sys.argv[1:])
 
 
+# write at the end of file program_params to log.txt file
+with open("log.txt", "a") as f:
+    f.write(program_params + "\n")
+
 messages = [
     {
         "role": "system",
